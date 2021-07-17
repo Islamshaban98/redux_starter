@@ -6,10 +6,10 @@ import { bugAdded, bugResolved } from './store/bugs';
 
 const store = configStore();
 const unsubscribe = store.subscribe(()=>console.log("hhh",store.getState()));
-store.dispatch(bugAdded("add bug1 please"));
-store.dispatch(bugAdded("add bug2 please"));
-store.dispatch(bugAdded("add bug3 please"));
-store.dispatch(bugResolved(2));
+store.dispatch(bugAdded({description:"add bug1 please"}));
+store.dispatch(bugAdded({description:"add bug2 please"}));
+store.dispatch(bugAdded({description:"add bug3 please"}));
+store.dispatch(bugResolved({id:2}));
 
 unsubscribe()
 
